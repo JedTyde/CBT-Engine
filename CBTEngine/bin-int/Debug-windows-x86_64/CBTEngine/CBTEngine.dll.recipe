@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\PC\Documents\GitHub\CBT-Engine\CBT Engine\bin\Debug-x64\CBT Engine\CBT Engine.dll</FullPath>
+      <FullPath>C:\Users\PC\Documents\GitHub\CBT-Engine\CBTEngine\bin\Debug-windows-x86_64\CBTEngine\CBTEngine.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
