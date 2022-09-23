@@ -4,6 +4,9 @@
     <Filter Include="CBT">
       <UniqueIdentifier>{BED8870B-2AE2-877C-B35D-9E7C1F66937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CBT\Events">
+      <UniqueIdentifier>{c3f09365-1bca-4f9e-b96b-0831b536b391}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CBT.h" />
@@ -18,6 +21,18 @@
     </ClInclude>
     <ClInclude Include="src\CBT\Log.h">
       <Filter>CBT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CBT\Events\ApplicationEvent.h">
+      <Filter>CBT\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CBT\Events\Event.h">
+      <Filter>CBT\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CBT\Events\KeyEvent.h">
+      <Filter>CBT\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CBT\Events\MouseEvent.h">
+      <Filter>CBT\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
