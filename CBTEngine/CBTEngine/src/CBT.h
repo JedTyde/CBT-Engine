@@ -2,7 +2,6 @@
 
 // For use by CBT app
 
-#include <stdio.h>
 #include "CBT/Application.h"
 #include "CBT/Log.h"
 

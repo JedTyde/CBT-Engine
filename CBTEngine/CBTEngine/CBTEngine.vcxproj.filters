@@ -5,7 +5,7 @@
       <UniqueIdentifier>{BED8870B-2AE2-877C-B35D-9E7C1F66937C}</UniqueIdentifier>
     </Filter>
     <Filter Include="CBT\Events">
-      <UniqueIdentifier>{c3f09365-1bca-4f9e-b96b-0831b536b391}</UniqueIdentifier>
+      <UniqueIdentifier>{E282969D-CE3A-D8EA-3742-B146231973DB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -17,9 +17,6 @@
       <Filter>CBT</Filter>
     </ClInclude>
     <ClInclude Include="src\CBT\EntryPoint.h">
-      <Filter>CBT</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CBT\Log.h">
       <Filter>CBT</Filter>
     </ClInclude>
     <ClInclude Include="src\CBT\Events\ApplicationEvent.h">
@@ -34,6 +31,10 @@
     <ClInclude Include="src\CBT\Events\MouseEvent.h">
       <Filter>CBT\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\CBT\Log.h">
+      <Filter>CBT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CBTpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\CBT\Log.cpp">
       <Filter>CBT</Filter>
     </ClCompile>
+    <ClCompile Include="src\CBTpch.cpp" />
   </ItemGroup>
 </Project>

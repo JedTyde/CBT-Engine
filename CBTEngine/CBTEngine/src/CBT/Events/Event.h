@@ -2,8 +2,6 @@
 
 #include "CBT/Core.h"
 
-#include <string>
-#include <functional>
 
 namespace CBT {
 	//When you click the app stops and process

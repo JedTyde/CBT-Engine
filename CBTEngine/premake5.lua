@@ -18,6 +18,9 @@ project "CBTEngine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "CBTpch.h"
+    pchsource "CBTEngine/src/CBTpch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",
@@ -26,7 +29,7 @@ project "CBTEngine"
     
     includedirs
     {
-        "%{prj.name}/src"
+        "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
