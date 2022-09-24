@@ -89,7 +89,6 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl132.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\CBTEngine\CBTEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -115,7 +114,6 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl132.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\CBTEngine\CBTEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -141,7 +139,6 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl132.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist-windows-x86_64\CBTEngine\CBTEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -158,7 +155,9 @@
     <ClInclude Include="src\CBT\Events\KeyEvent.h" />
     <ClInclude Include="src\CBT\Events\MouseEvent.h" />
     <ClInclude Include="src\CBT\Log.h" />
+    <ClInclude Include="src\CBT\Window.h" />
     <ClInclude Include="src\CBTpch.h" />
+    <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp" />
@@ -166,6 +165,7 @@
     <ClCompile Include="src\CBTpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

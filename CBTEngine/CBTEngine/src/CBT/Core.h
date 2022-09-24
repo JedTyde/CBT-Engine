@@ -10,4 +10,12 @@
 	#error CBT only support Windows
 #endif
 
+#ifdef CBT_ENABLE_ASSERTS
+	#define CBT_ASSERT(x,...) { if(!(x)) {CBT_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define CBT_CORE_ASSERT(x,...) { if(!(x)) {CBT_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define CBT_ASSERT(x,...)
+	#define CBT_CORE_ASSERT(x,...)
+#endif
+
 #define BIT(x) (1 << x)

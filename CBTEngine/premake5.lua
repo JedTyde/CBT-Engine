@@ -43,7 +43,7 @@ project "CBTEngine"
 	links
 	{
 		"GLFW",
-		"opengl132.lib"
+		--"opengl132.lib"
     }
 
     filter "system:windows"

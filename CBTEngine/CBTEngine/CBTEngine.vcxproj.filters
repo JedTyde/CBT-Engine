@@ -7,6 +7,12 @@
     <Filter Include="CBT\Events">
       <UniqueIdentifier>{E282969D-CE3A-D8EA-3742-B146231973DB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platforms">
+      <UniqueIdentifier>{a6a31aa7-d6f9-46cc-8802-8ecef1be1d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\Windows">
+      <UniqueIdentifier>{d8a1c4ac-e75a-4d51-a1b1-2f6b38650d9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CBT.h" />
@@ -34,7 +40,13 @@
     <ClInclude Include="src\CBT\Log.h">
       <Filter>CBT</Filter>
     </ClInclude>
+    <ClInclude Include="src\CBT\Window.h">
+      <Filter>CBT</Filter>
+    </ClInclude>
     <ClInclude Include="src\CBTpch.h" />
+    <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h">
+      <Filter>Platforms\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
@@ -44,5 +56,8 @@
       <Filter>CBT</Filter>
     </ClCompile>
     <ClCompile Include="src\CBTpch.cpp" />
+    <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp">
+      <Filter>Platforms\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
