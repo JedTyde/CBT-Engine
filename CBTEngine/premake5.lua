@@ -10,6 +10,12 @@ configurations
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to the root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "CBTEngine/vendor/GLFW/include"
+
+include "CBTEngine/vendor/GLFW"
+
 project "CBTEngine"
     location "CBTEngine"
     kind "SharedLib"
@@ -30,7 +36,14 @@ project "CBTEngine"
     includedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+		
+	links
+	{
+		"GLFW",
+		"opengl132.lib"
     }
 
     filter "system:windows"

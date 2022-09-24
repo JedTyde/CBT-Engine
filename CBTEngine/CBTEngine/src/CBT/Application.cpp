@@ -11,7 +11,7 @@ namespace CBT {
 	}
 
 	Application::~Application()
-	{
+	{	
 	}
 
 	void Application::Run()
