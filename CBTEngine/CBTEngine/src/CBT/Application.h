@@ -4,6 +4,8 @@
 #include "Events/Event.h"
 #include "Window.h"
 
+#include <CBT/Events/ApplicationEvent.h>
+
 namespace CBT {
 
 	class CBTE_API Application
@@ -13,7 +15,12 @@ namespace CBT {
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(Event& e);
+
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 	};
