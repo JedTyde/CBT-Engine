@@ -1,6 +1,8 @@
 #pragma once
 
 #include "CBT/Core.h"
+#include <string>
+#include <functional>
 
 
 namespace CBT {
