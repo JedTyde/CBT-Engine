@@ -21,7 +21,7 @@ namespace CBT {
 	};
 		//Interface representing a desktop system based Window
 	
-	class CBTE_API Window 
+	class CBT_API Window 
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;

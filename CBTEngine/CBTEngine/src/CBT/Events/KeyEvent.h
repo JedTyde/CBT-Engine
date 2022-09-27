@@ -4,7 +4,7 @@
 
 namespace CBT {
 
-	class CBTE_API KeyEvent : public Event
+	class CBT_API KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -17,7 +17,7 @@ namespace CBT {
 		int m_KeyCode;
 	};
 
-	class CBTE_API KeyPressedEvent : public KeyEvent
+	class CBT_API KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode, int repeatCount)
@@ -37,7 +37,7 @@ namespace CBT {
 		bool m_RepeatCount;
 	};
 
-	class CBTE_API KeyReleasedEvent : public KeyEvent
+	class CBT_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode)

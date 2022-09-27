@@ -37,6 +37,12 @@
     <ClInclude Include="src\CBT\Events\MouseEvent.h">
       <Filter>CBT\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\CBT\Layer.h">
+      <Filter>CBT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CBT\LayerStack.h">
+      <Filter>CBT</Filter>
+    </ClInclude>
     <ClInclude Include="src\CBT\Log.h">
       <Filter>CBT</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
+      <Filter>CBT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CBT\Layer.cpp">
+      <Filter>CBT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CBT\LayerStack.cpp">
       <Filter>CBT</Filter>
     </ClCompile>
     <ClCompile Include="src\CBT\Log.cpp">

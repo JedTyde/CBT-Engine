@@ -6,7 +6,7 @@
 
 namespace CBT {
 
-	class CBTE_API Log
+	class CBT_API Log
 	{
 	public:
 		static void Init();

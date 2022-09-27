@@ -4,7 +4,7 @@
 
 namespace CBT {
 
-	class CBTE_API MouseMovedEvent : public Event
+	class CBT_API MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y)
@@ -26,7 +26,7 @@ namespace CBT {
 		float m_MouseX, m_MouseY;
 	};
 
-	class CBTE_API MouseScrolledEvent : public Event
+	class CBT_API MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
@@ -48,7 +48,7 @@ namespace CBT {
 		float m_XOffset, m_YOffset;
 	};
 
-	class CBTE_API MouseButtonEvent : public Event
+	class CBT_API MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -61,7 +61,7 @@ namespace CBT {
 		int m_Button;
 	};
 
-	class CBTE_API MouseButtonPressedEvent : public MouseButtonEvent
+	class CBT_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -77,7 +77,7 @@ namespace CBT {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class CBTE_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class CBT_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)

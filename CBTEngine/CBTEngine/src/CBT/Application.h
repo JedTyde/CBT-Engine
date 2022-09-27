@@ -8,7 +8,7 @@
 
 namespace CBT {
 
-	class CBTE_API Application
+	class CBT_API Application
 	{
 	public:
 		Application();

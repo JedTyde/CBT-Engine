@@ -157,6 +157,8 @@
     <ClInclude Include="src\CBT\Events\Event.h" />
     <ClInclude Include="src\CBT\Events\KeyEvent.h" />
     <ClInclude Include="src\CBT\Events\MouseEvent.h" />
+    <ClInclude Include="src\CBT\Layer.h" />
+    <ClInclude Include="src\CBT\LayerStack.h" />
     <ClInclude Include="src\CBT\Log.h" />
     <ClInclude Include="src\CBT\Window.h" />
     <ClInclude Include="src\CBTpch.h" />
@@ -164,6 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp" />
+    <ClCompile Include="src\CBT\Layer.cpp" />
+    <ClCompile Include="src\CBT\LayerStack.cpp" />
     <ClCompile Include="src\CBT\Log.cpp" />
     <ClCompile Include="src\CBTpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

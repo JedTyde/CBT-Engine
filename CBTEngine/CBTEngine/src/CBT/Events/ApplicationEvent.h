@@ -4,7 +4,7 @@
 
 namespace CBT {
 
-	class CBTE_API WindowResizeEvent : public Event
+	class CBT_API WindowResizeEvent : public Event
 	{
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height)
@@ -26,7 +26,7 @@ namespace CBT {
 		unsigned int m_Width, m_Height;
 	};
 
-	class CBTE_API WindowCloseEvent : public Event
+	class CBT_API WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() {}
@@ -35,7 +35,7 @@ namespace CBT {
 			EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class CBTE_API AppTickEvent : public Event
+	class CBT_API AppTickEvent : public Event
 	{
 	public:
 		AppTickEvent() {}
@@ -44,7 +44,7 @@ namespace CBT {
 			EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class CBTE_API AppUpdateEvent : public Event
+	class CBT_API AppUpdateEvent : public Event
 	{
 	public:
 		AppUpdateEvent() {}
@@ -53,7 +53,7 @@ namespace CBT {
 			EVENT_CLASS_CATEGORY(EventCategoryApplication)
 	};
 
-	class CBTE_API AppRenderEvent : public Event
+	class CBT_API AppRenderEvent : public Event
 	{
 	public:
 		AppRenderEvent() {}

@@ -33,7 +33,7 @@ namespace CBT {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class CBTE_API Event
+	class CBT_API Event
 	{
 		friend class EventDispatcher;
 	public:
