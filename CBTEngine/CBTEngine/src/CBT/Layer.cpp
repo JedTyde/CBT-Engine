@@ -5,13 +5,17 @@
 
 #include <vector>
 
-namespace CBT
-{
-	Layer::Layer(const std::string& name)
+namespace CBT {
+
+	Layer::Layer(const std::string& debugName)
+		: m_DebugName(debugName)
 	{
 	}
+
 	Layer::~Layer()
 	{
+
 	}
+
 }
 
