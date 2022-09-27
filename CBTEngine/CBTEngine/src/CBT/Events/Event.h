@@ -1,8 +1,8 @@
 #pragma once
 
 #include "CBT/Core.h"
-#include <string>
-#include <functional>
+
+#include "CBTpch.h"
 
 
 namespace CBT {
@@ -66,7 +66,7 @@ namespace CBT {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled = func(*(T*)&m_Event);
+				m_Event.m_Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;
