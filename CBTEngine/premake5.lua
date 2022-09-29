@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to the root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "CBTEngine/vendor/GLFW/include"
+IncludeDir["GLAD"] = "CBTEngine/vendor/GLAD/include"
 
 include "CBTEngine/vendor/GLFW"
+include "CBTEngine/vendor/GLAD"
 
 project "CBTEngine"
     location "CBTEngine"
@@ -37,12 +39,14 @@ project "CBTEngine"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.GLAD}"
 	}
 		
 	links
 	{
 		"GLFW",
+		"GLAD",
 		--"opengl132.lib"
     }
 
