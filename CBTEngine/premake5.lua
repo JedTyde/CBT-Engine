@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "CBTEngine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "CBTEngine/vendor/GLAD/include"
+IncludeDir["GLAD"] = "CBTEngine/vendor/imgui/include"
 
 include "CBTEngine/vendor/GLFW"
 include "CBTEngine/vendor/GLAD"
+include "CBTEngine/vendor/imgui"
 
 project "CBTEngine"
     location "CBTEngine"
@@ -40,13 +42,15 @@ project "CBTEngine"
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.GLAD}"
+		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.imgui}"
 	}
 		
 	links
 	{
 		"GLFW",
 		"GLAD",
+		"imgui",
 		--"opengl132.lib"
     }
 

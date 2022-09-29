@@ -1,0 +1,2 @@
+C:\Users\traxo\Documents\GitHub\CBT-Engine\CBTEngine\CBTEngine\vendor\GLAD\bin\Debug-windows-x86_64\GLAD\GLAD.pdb
+C:\Users\traxo\Documents\GitHub\CBT-Engine\CBTEngine\CBTEngine\vendor\GLAD\bin-int\Debug-windows-x86_64\GLAD\GLAD.pdb

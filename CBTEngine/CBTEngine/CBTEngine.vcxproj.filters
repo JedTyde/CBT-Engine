@@ -13,6 +13,12 @@
     <Filter Include="Platforms\Windwos">
       <UniqueIdentifier>{17050908-831B-079E-CC92-92BF38E8D725}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CBT\ImGui">
+      <UniqueIdentifier>{419edeaa-1ac5-4d28-b241-fb38541769c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\OpenGL">
+      <UniqueIdentifier>{707e1c6f-a87c-4879-835a-96140fa59300}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CBT.h" />
@@ -53,6 +59,12 @@
     <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h">
       <Filter>Platforms\Windwos</Filter>
     </ClInclude>
+    <ClInclude Include="ImGuiLayer.h">
+      <Filter>CBT\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
@@ -70,6 +82,12 @@
     <ClCompile Include="src\CBTpch.cpp" />
     <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp">
       <Filter>Platforms\Windwos</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuiLayer.cpp">
+      <Filter>CBT\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platforms\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
