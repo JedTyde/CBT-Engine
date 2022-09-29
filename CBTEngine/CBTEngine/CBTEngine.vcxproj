@@ -150,6 +150,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ImGuiLayer.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="src\CBT.h" />
     <ClInclude Include="src\CBT\Application.h" />
     <ClInclude Include="src\CBT\Core.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="src\CBTpch.h" />
     <ClInclude Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h" />
+    <ClInclude Include="WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ImGuiLayer.cpp" />
@@ -177,6 +179,7 @@
     </ClCompile>
     <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp" />
+    <ClCompile Include="WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

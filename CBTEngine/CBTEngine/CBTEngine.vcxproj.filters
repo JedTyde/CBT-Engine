@@ -65,6 +65,12 @@
     <ClInclude Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platforms\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>CBT</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsInput.h">
+      <Filter>Platforms\Windwos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsInput.cpp">
+      <Filter>Platforms\Windwos</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
