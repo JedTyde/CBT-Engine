@@ -6,7 +6,7 @@
 #include "LayerStack.h"
 #include "Events/Event.h"
 #include <CBT/Events/ApplicationEvent.h>
-
+#include "ImGui/ImGuiLayer.h"
 
 namespace CBT {
 
@@ -31,6 +31,7 @@ namespace CBT {
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+		ImGuiLayer* m_ImGuiLayer;
 	private:
 		static Application* s_Instance;
 	};

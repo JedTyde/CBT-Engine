@@ -14,7 +14,7 @@ namespace CBT
 		virtual ~Layer();
 
 		virtual void OnAttach() {}
-		virtual void OnDetatch() {}
+		virtual void OnDettach() {}
 		virtual void OnUpdate() {}
 		virtual void OnEvent() {}
 

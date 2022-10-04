@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\traxo\Documents\GitHub\CBT-Engine\CBTEngine\bin\Debug-windows-x86_64\CBTEngine\CBTEngine.dll</FullPath>
+      <FullPath>C:\Users\paugq\Documents\GitHub\CBT-Engine\CBTEngine\bin\Debug-windows-x86_64\CBTEngine\CBTEngine.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\traxo\Documents\GitHub\CBT-Engine\CBTEngine\bin\Debug-windows-x86_64\Sandbox\Sandbox.exe</FullPath>
+      <FullPath>C:\Users\paugq\Documents\GitHub\CBT-Engine\CBTEngine\bin\Debug-windows-x86_64\Sandbox\Sandbox.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

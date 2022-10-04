@@ -7,17 +7,17 @@
     <Filter Include="CBT\Events">
       <UniqueIdentifier>{E282969D-CE3A-D8EA-3742-B146231973DB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CBT\ImGui">
+      <UniqueIdentifier>{6864CB0C-D4CE-7F83-1D0D-312989B65DD8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platforms">
       <UniqueIdentifier>{DDACA145-4917-56BC-9255-0762FEFE3311}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platforms\OpenGL">
+      <UniqueIdentifier>{719BB998-5D94-D8EA-86C6-BD6F721EB8F6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platforms\Windwos">
       <UniqueIdentifier>{17050908-831B-079E-CC92-92BF38E8D725}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CBT\ImGui">
-      <UniqueIdentifier>{419edeaa-1ac5-4d28-b241-fb38541769c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Platforms\OpenGL">
-      <UniqueIdentifier>{707e1c6f-a87c-4879-835a-96140fa59300}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +43,9 @@
     <ClInclude Include="src\CBT\Events\MouseEvent.h">
       <Filter>CBT\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\CBT\ImGui\ImGuiLayer.h">
+      <Filter>CBT\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\CBT\Layer.h">
       <Filter>CBT</Filter>
     </ClInclude>
@@ -56,25 +59,27 @@
       <Filter>CBT</Filter>
     </ClInclude>
     <ClInclude Include="src\CBTpch.h" />
-    <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h">
-      <Filter>Platforms\Windwos</Filter>
-    </ClInclude>
-    <ClInclude Include="ImGuiLayer.h">
-      <Filter>CBT\ImGui</Filter>
-    </ClInclude>
+    <ClInclude Include="src\Input.h" />
     <ClInclude Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platforms\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>CBT</Filter>
+    <ClInclude Include="src\Platforms\OpenGL\imgui_impl_glfw.h">
+      <Filter>Platforms\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="WindowsInput.h">
+    <ClInclude Include="src\Platforms\OpenGL\imgui_impl_opengl3_loader.h">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h">
       <Filter>Platforms\Windwos</Filter>
     </ClInclude>
+    <ClInclude Include="src\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
       <Filter>CBT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CBT\ImGui\ImGuiLayer.cpp">
+      <Filter>CBT\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\CBT\Layer.cpp">
       <Filter>CBT</Filter>
@@ -86,17 +91,15 @@
       <Filter>CBT</Filter>
     </ClCompile>
     <ClCompile Include="src\CBTpch.cpp" />
-    <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp">
-      <Filter>Platforms\Windwos</Filter>
-    </ClCompile>
-    <ClCompile Include="ImGuiLayer.cpp">
-      <Filter>CBT\ImGui</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platforms\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="WindowsInput.cpp">
+    <ClCompile Include="src\Platforms\OpenGL\imgui_impl_glfw.cpp">
+      <Filter>Platforms\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp">
       <Filter>Platforms\Windwos</Filter>
     </ClCompile>
+    <ClCompile Include="src\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

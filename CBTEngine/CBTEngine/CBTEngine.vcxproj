@@ -149,8 +149,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ImGuiLayer.h" />
-    <ClInclude Include="Input.h" />
     <ClInclude Include="src\CBT.h" />
     <ClInclude Include="src\CBT\Application.h" />
     <ClInclude Include="src\CBT\Core.h" />
@@ -159,18 +157,22 @@
     <ClInclude Include="src\CBT\Events\Event.h" />
     <ClInclude Include="src\CBT\Events\KeyEvent.h" />
     <ClInclude Include="src\CBT\Events\MouseEvent.h" />
+    <ClInclude Include="src\CBT\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\CBT\Layer.h" />
     <ClInclude Include="src\CBT\LayerStack.h" />
     <ClInclude Include="src\CBT\Log.h" />
     <ClInclude Include="src\CBT\Window.h" />
     <ClInclude Include="src\CBTpch.h" />
+    <ClInclude Include="src\Input.h" />
     <ClInclude Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platforms\OpenGL\imgui_impl_glfw.h" />
+    <ClInclude Include="src\Platforms\OpenGL\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h" />
-    <ClInclude Include="WindowsInput.h" />
+    <ClInclude Include="src\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ImGuiLayer.cpp" />
     <ClCompile Include="src\CBT\Application.cpp" />
+    <ClCompile Include="src\CBT\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\CBT\Layer.cpp" />
     <ClCompile Include="src\CBT\LayerStack.cpp" />
     <ClCompile Include="src\CBT\Log.cpp" />
@@ -178,8 +180,9 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platforms\OpenGL\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp" />
-    <ClCompile Include="WindowsInput.cpp" />
+    <ClCompile Include="src\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

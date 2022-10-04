@@ -1,6 +1,8 @@
 #include "CBTpch.h"
 #include "WindowsWindow.h"
 
+#include "CBT/Log.h"
+
 #include <CBT/Events/ApplicationEvent.h>
 #include <CBT/Events/KeyEvent.h>
 #include <CBT/Events/MouseEvent.h>
@@ -40,7 +42,7 @@ namespace CBT {
 		m_Data.Height = props.Height;
 
 
-		//CBT_CORE_INFO("Creating Window {0} ({1}, {2})", props.Title, props.Width, props.Height);
+		CBT_CORE_INFO("Creating Window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (!s_GLFWInitialized)
 		{
@@ -54,6 +56,7 @@ namespace CBT {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		CBT_CORE_TRACE("Creating window...");
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		CBT_CORE_ASSERT(status, "Failed to initialize GLAD!")
 		glfwSetWindowUserPointer(m_Window, &m_Data);
