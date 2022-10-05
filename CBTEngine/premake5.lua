@@ -1,5 +1,6 @@
 workspace "CBTEngine"
 architecture "x64"
+startproject "Sandbox"
 
 configurations
 {
@@ -53,7 +54,8 @@ project "CBTEngine"
 		"imgui",
 		--"opengl132.lib"
     }
-
+	debugdir "$(SolutionDir)/bin/Debug-windows-x86_64/Sandbox"
+	
     filter "system:windows"
         cppdialect "C++17"
         staticruntime "On"
@@ -65,11 +67,10 @@ project "CBTEngine"
             "CBT_BUILD_DLL"
         }
 
-        postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-        }
-
+		postbuildcommands
+		{
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+		}
     filter "configurations:Debug"
         defines "CBT_DEBUG"
         buildoptions "/MDd"
