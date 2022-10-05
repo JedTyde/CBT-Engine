@@ -1,6 +1,0 @@
-[submodule "CBTEngine/vendor/GLFW"]
-	path =CBTEngine/vendor/GLFW
-	url = https://github.com/TheCherno/glfw
-[submodule "CBTEngine/vendor/imgui"]
-	path = CBTEngine/vendor/imgui
-	url = https://github.com/TheCherno/imgui

@@ -350,3 +350,6 @@ MigrationBackup/
 .ionide/
 
 !/vendor/bin
+
+/bin/
+/bin-int/
