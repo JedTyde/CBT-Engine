@@ -45,7 +45,7 @@ project "CBTEngine"
         "%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.imgui}",
 		"%{IncludeDir.mathgeolib}"
 	}
 		
