@@ -1,14 +1,19 @@
 #include "CBTpch.h"
+
+#include "CBTEngine/vendor/imgui/imgui.h"
+
 #include "GLFW/glfw3.h"
 
 #include "CBT/Application.h"
 #include "ImGuiLayer.h"
 
-#include "Platforms/OpenGL/ImGuiOpenGLRenderer.h"
-
 // TEMPORARY
+#include "Platforms/OpenGL/ImGuiOpenGLRenderer.h"
+#include "../src/Platforms/OpenGL/imgui_impl_glfw.h"
+
+
+#include <CBTEngine/vendor/GLAD/include/glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <../CBTEngine/CBTEngine/vendor/GLAD/include/glad/glad.h>
 
 namespace CBT 
 {
@@ -29,11 +34,11 @@ namespace CBT
 		ImGui::StyleColorsDark();
 
 		ImGuiIO& io = ImGui::GetIO();
-		io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
-		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
-		//io.BackendFlags |= ImGuiBackendFlags_PlatformHasViewports;
-		//io.BackendFlags |= ImGuiBackendFlags_RendererHasViewports;
-		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+		/*io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
+		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;*/
+		io.BackendFlags |= ImGuiBackendFlags_PlatformHasViewports;
+		io.BackendFlags |= ImGuiBackendFlags_RendererHasViewports;
+		/*io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;*/
 		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
 		//// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
@@ -44,15 +49,16 @@ namespace CBT
 		//	style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 		//}
 
-		//auto window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
+		auto window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 
+		ImGui_ImplGlfw_InitForOpenGL(window, true);
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
 	void ImGuiLayer::OnDettach()
 	{
 		ImGui_ImplOpenGL3_Shutdown();
-
+		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
 	}
 
@@ -66,6 +72,7 @@ namespace CBT
 		io.DeltaTime = m_Time > 0.0f ? (time - m_Time) : (1.0f / 60.0f);
 		m_Time = time;
 		
+		ImGui_ImplGlfw_NewFrame();
 		ImGui_ImplOpenGL3_NewFrame();
 
 		ImGui::NewFrame();
@@ -161,7 +168,7 @@ namespace CBT
 		io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
 		glViewport(0, 0, e.GetWidth(), e.GetHeight());
 		
-return false;
+		return false;
 	}
 
 

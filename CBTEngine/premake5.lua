@@ -67,7 +67,7 @@ project "CBTEngine"
 
         postbuildcommands
         {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+            ("{COPY} %{cfg.buildtarget.relpath} ../Editor")
         }
 
     filter "configurations:Debug"
@@ -94,6 +94,7 @@ project "Sandbox"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	debugdir ("Editor")
 
     files
     {
@@ -120,6 +121,11 @@ project "Sandbox"
         defines
         {
             "CBT_PLATFORM_WINDOWS"
+        }
+		
+		postbuildcommands
+        {
+            ("{COPY} %{cfg.buildtarget.relpath} ../Editor")
         }
 
     filter "configurations:Debug"

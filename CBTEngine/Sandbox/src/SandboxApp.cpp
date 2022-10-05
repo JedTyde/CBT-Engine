@@ -28,7 +28,6 @@ public:
 	{
 		//SE TIENE QUE ARREGLAR ESTO
 		PushLayer(new ExampleLayer());
-		PushOverlay(new CBT::ImGuiLayer());
 	}
 
 	~Sandbox()
