@@ -14,7 +14,9 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "CBTEngine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "CBTEngine/vendor/GLAD/include"
-IncludeDir["GLAD"] = "CBTEngine/vendor/imgui/include"
+IncludeDir["imgui"] = "CBTEngine/vendor/imgui/include"
+IncludeDir["rapidjson"] = "CBTEngine/vendor/rapidjson/include"
+IncludeDir["mathgeolib"] = "CBTEngine/vendor/mathgeolib/include"
 
 include "CBTEngine/vendor/GLFW"
 include "CBTEngine/vendor/GLAD"
@@ -44,6 +46,7 @@ project "CBTEngine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.imgui}"
+		"%{IncludeDir.mathgeolib}"
 	}
 		
 	links
