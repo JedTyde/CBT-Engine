@@ -5,7 +5,7 @@
 
 #include "Events/ApplicationEvent.h"
 
-#include <CBTEngine/vendor/GLAD/include/glad/glad.h>
+#include "../../CBTEngine/vendor/GLAD/include/glad/glad.h"
 
 namespace CBT {
 

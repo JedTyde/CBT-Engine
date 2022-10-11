@@ -8,7 +8,7 @@
 #include <CBT/Events/MouseEvent.h>
 
 #include <GLFW/glfw3.h>
-#include <../CBTEngine/CBTEngine/vendor/GLAD/include/glad/glad.h>
+#include "../../CBTEngine/vendor/GLAD/include/glad/glad.h"
 
 namespace CBT {
 
