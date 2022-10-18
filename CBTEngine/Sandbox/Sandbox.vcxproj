@@ -143,12 +143,20 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AboutPanel.cpp" />
+    <ClCompile Include="EditorLayer.cpp" />
+    <ClCompile Include="Panels.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CBTEngine\CBTEngine.vcxproj">
       <Project>{54B2B742-C01C-6CB9-095B-1D5F75044A0E}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AboutPanel.h" />
+    <ClInclude Include="EditorLayer.h" />
+    <ClInclude Include="Panels.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
