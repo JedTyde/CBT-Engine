@@ -14,6 +14,9 @@ namespace CBT
 		ImGuiLayer();
 		~ImGuiLayer();
 
+		void Begin();
+		void End();
+
 		void OnAttach();
 		void OnDettach();
 		void OnUpdate();
