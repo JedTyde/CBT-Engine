@@ -143,9 +143,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AboutPanel.cpp" />
-    <ClCompile Include="EditorLayer.cpp" />
-    <ClCompile Include="Panels.cpp" />
+    <ClCompile Include="src\Layers\EditorLayer.cpp" />
+    <ClCompile Include="src\Layers\Panels\AboutPanel.cpp" />
+    <ClCompile Include="src\Layers\Panels\Panels.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,9 +154,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AboutPanel.h" />
-    <ClInclude Include="EditorLayer.h" />
-    <ClInclude Include="Panels.h" />
+    <ClInclude Include="src\Layers\EditorLayer.h" />
+    <ClInclude Include="src\Layers\Panels\AboutPanel.h" />
+    <ClInclude Include="src\Layers\Panels\Panels.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
