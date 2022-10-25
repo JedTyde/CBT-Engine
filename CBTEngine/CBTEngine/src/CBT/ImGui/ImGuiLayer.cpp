@@ -44,9 +44,9 @@ namespace CBT
 
 	void ImGuiLayer::OnAttach()
 	{
-		ImGui::CreateContext();
-		ImGui::StyleColorsDark();
 
+		m_Context = ImGui::CreateContext();
+		ImGui::StyleColorsDark();
 		ImGuiIO& io = ImGui::GetIO();
 		/*io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;
 		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;*/

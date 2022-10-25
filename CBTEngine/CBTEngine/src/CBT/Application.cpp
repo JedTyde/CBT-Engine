@@ -57,10 +57,16 @@ namespace CBT {
 		{
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
-			m_ImGuiLayer->OnUpdate();
+			for (Layer* layer : m_LayerStack)
+				layer->OnUpdate();
 			m_ImGuiLayer->Begin();
 
-			//editorlayerrender update
+			{
+				m_ImGuiLayer->OnUpdate();
+				//TODO: Optick On ImGuiRender call
+				for (Layer* layer : m_LayerStack)
+					layer->OnImGuiRender();
+			}
 
 			m_ImGuiLayer->End();
 			m_Window->OnUpdate();

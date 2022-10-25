@@ -143,6 +143,11 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Layers\EditorLayer.h" />
+    <ClInclude Include="src\Layers\Panels\AboutPanel.h" />
+    <ClInclude Include="src\Layers\Panels\Panels.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\Layers\EditorLayer.cpp" />
     <ClCompile Include="src\Layers\Panels\AboutPanel.cpp" />
     <ClCompile Include="src\Layers\Panels\Panels.cpp" />
@@ -152,11 +157,9 @@
     <ProjectReference Include="..\CBTEngine\CBTEngine.vcxproj">
       <Project>{54B2B742-C01C-6CB9-095B-1D5F75044A0E}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Layers\EditorLayer.h" />
-    <ClInclude Include="src\Layers\Panels\AboutPanel.h" />
-    <ClInclude Include="src\Layers\Panels\Panels.h" />
+    <ProjectReference Include="..\CBTEngine\vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

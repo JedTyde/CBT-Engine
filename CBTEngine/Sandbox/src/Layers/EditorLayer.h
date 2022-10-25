@@ -10,6 +10,7 @@
 
 class EditorLayer : public CBT::Layer
 {
+public:
 	EditorLayer();
 	~EditorLayer();
 
@@ -31,6 +32,6 @@ private:
 	bool m_ShowConsole = false;
 	bool m_ShowDemo = false;
 
-	std::shared_ptr<AboutPanel>			m_About = nullptr;
+	std::shared_ptr<Panels>			m_About = nullptr;
 };
 

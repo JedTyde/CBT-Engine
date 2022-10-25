@@ -1,5 +1,6 @@
 #include "CBT.h"
 
+#include "Layers/EditorLayer.h"
 class ExampleLayer : public CBT::Layer
 {
 public:
@@ -27,7 +28,7 @@ public:
 	Sandbox()
 	{
 		//SE TIENE QUE ARREGLAR ESTO
-		PushLayer(new ExampleLayer());
+		PushLayer(new EditorLayer());
 	}
 
 	~Sandbox()

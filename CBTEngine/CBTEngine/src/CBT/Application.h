@@ -25,6 +25,7 @@ namespace CBT {
 
 		inline Window& GetWindow() { return *m_Window; }
 		inline static Application& Get() { return *s_Instance; }
+		inline ImGuiContext* GetImGuiContext() { return m_ImGuiLayer->GetContext(); }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 

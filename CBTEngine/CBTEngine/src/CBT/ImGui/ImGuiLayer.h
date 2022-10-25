@@ -5,7 +5,7 @@
 #include "CBT/Events/ApplicationEvent.h"
 #include "CBT/Events/KeyEvent.h"
 #include "CBT/Events/MouseEvent.h"
-
+#include "../../CBTEngine/vendor/imgui/imgui.h"
 namespace CBT
 {
 	class CBT_API ImGuiLayer : public Layer
@@ -21,6 +21,7 @@ namespace CBT
 		void OnDettach();
 		void OnUpdate();
 		void OnEvent(Event& event);
+		inline ImGuiContext* GetContext() { return m_Context; }
 
 	private:
 		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
@@ -34,5 +35,6 @@ namespace CBT
 
 	private:
 		float m_Time = 0.0f;
+		ImGuiContext* m_Context;
 	};
 }

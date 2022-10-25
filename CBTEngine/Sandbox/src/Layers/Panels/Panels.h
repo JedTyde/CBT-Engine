@@ -16,7 +16,7 @@ public:
 	const char* GetName() const { return name; }
 
 public:
-	bool active = false;
+	bool active = true;
 protected:
 	const char* name;
 };
