@@ -14,9 +14,11 @@ namespace CBT
 		virtual ~Layer();
 
 		virtual void OnAttach() {}
-		virtual void OnDettach() {}
+		virtual void OnDetach() {}
 		virtual void OnUpdate() {}
 		virtual void OnEvent() {}
+		virtual void OnImGuiRender() {}
+		virtual void OnEvent(CBT::Event& ev) {}
 
 		inline const std::string& GetName() const { return m_DebugName; }
 

@@ -24,6 +24,9 @@ private:
 	void DockSpace();
 
 	bool OnKeyPressed(CBT::KeyPressedEvent& k);
+	std::vector<Panels*> m_Panels;
+	std::unique_ptr<Panels>	m_Configuration;
+	std::unique_ptr<Panels>	m_Assets;
 
 	bool m_ShowConsole = false;
 	bool m_ShowDemo = false;

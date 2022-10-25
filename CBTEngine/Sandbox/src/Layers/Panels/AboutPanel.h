@@ -2,7 +2,7 @@
 
 #include "Panels.h"
 
-class AboutPanel
+class AboutPanel : public Panels
 {
 public:
 	AboutPanel();
