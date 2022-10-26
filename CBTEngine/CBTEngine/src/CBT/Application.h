@@ -10,6 +10,22 @@
 
 namespace CBT {
 
+	struct SysInfo
+	{
+		SysInfo() = default;
+
+		char glfwVer[32];
+		uint32_t cache;
+		uint32_t numCores;
+		float ram;
+		const unsigned char* gpu;
+		const unsigned char* gpuBrand;
+		float gpuVRAM;
+		float gpuVRAMUsage;
+		float gpuVRAMAV;
+		float gpuVRAMReserve;
+	};
+
 	class CBT_API Application
 	{
 	public:
@@ -23,16 +39,24 @@ namespace CBT {
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
+
 		inline Window& GetWindow() { return *m_Window; }
 		inline static Application& Get() { return *s_Instance; }
 		inline ImGuiContext* GetImGuiContext() { return m_ImGuiLayer->GetContext(); }
+
+		inline SysInfo& GetSystemInfo() { return m_SysInfo; }
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		
+		SysInfo m_SysInfo;
+		
 		LayerStack m_LayerStack;
 		ImGuiLayer* m_ImGuiLayer;
+
 	private:
 		static Application* s_Instance;
 	};

@@ -143,11 +143,15 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AllocationMetrics.h" />
+    <ClInclude Include="ConfigPanel.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="src\Layers\EditorLayer.h" />
     <ClInclude Include="src\Layers\Panels\AboutPanel.h" />
     <ClInclude Include="src\Layers\Panels\Panels.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConfigPanel.cpp" />
     <ClCompile Include="src\Layers\EditorLayer.cpp" />
     <ClCompile Include="src\Layers\Panels\AboutPanel.cpp" />
     <ClCompile Include="src\Layers\Panels\Panels.cpp" />

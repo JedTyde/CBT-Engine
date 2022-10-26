@@ -31,13 +31,16 @@ namespace CBT {
 		virtual void OnUpdate() = 0;
 
 		virtual unsigned int GetWidth() const = 0;
-		virtual unsigned int GetHeight() const = 0;			
+		virtual unsigned int GetHeight() const = 0;		
+		virtual bool GetFullScreen() const = 0;
+		virtual bool GetResizable() const = 0;
 		
 		//Window Attributes
 		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
-
+		virtual void SetFullScreen(bool enabled) = 0;
+		virtual void SetResizable(bool enabled) = 0;
 		virtual void* GetNativeWindow() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());

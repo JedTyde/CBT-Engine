@@ -180,4 +180,27 @@ namespace CBT {
 		return m_Data.VSync;
 	}
 
+	void WindowsWindow::SetFullScreen(bool enabled)
+	{
+		GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+		const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+
+		m_OldData.Refresh = mode->refreshRate;
+		m_Data.Refresh = mode->refreshRate;
+
+		if (enabled)
+			glfwSetWindowMonitor(m_Window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
+		else
+			glfwSetWindowMonitor(m_Window, nullptr, (m_Data.Width / 2) - (m_OldData.Width / 2), (m_Data.Height / 2) - (m_OldData.Height / 2),
+				m_OldData.Width, m_OldData.Height, m_OldData.Refresh);
+		CBT_CORE_INFO("Window fullscreen changed {0}, {1}, {2}", m_OldData.Width, m_OldData.Height, m_OldData.Refresh);
+		m_Fullscreen = enabled;
+	}
+
+	void WindowsWindow::SetResizable(bool enabled)
+	{
+		glfwSetWindowAttrib(m_Window, GLFW_RESIZABLE, enabled);
+		m_Resizable = enabled;
+	}
+
 }
