@@ -5,6 +5,7 @@
 
 #include "CBT/Application.h"
 #include "CBT/Events/Event.h"
+#include "Panels/ConfigPanel.h"
 
 EditorLayer::EditorLayer() : Layer("Editor Layer")
 {
@@ -21,9 +22,11 @@ void EditorLayer::OnAttach()
 	m_About = std::make_shared<AboutPanel>();
 
 
-	/*m_Configuration = std::make_shared<ConfigurationPanel>();
 
-	m_Panels.push_back(m_Configuration);*/
+	m_Configuration = std::make_unique<ConfigPanel>();
+
+	m_Panels.push_back(m_Configuration.get());
+
 }
 
 void EditorLayer::OnDetach()
@@ -33,10 +36,8 @@ void EditorLayer::OnDetach()
 
 void EditorLayer::OnUpdate()
 {
-	//if (m_Configuration->active)
-	//	m_Configuration->Update();
-	//if (m_Assets->active)
-	//	m_Assets->Update();
+	for (auto& p : m_Panels)
+		p->Update();
 }
 
 void EditorLayer::OnImGuiRender()

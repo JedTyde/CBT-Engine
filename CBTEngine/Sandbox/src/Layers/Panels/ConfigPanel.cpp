@@ -1,6 +1,6 @@
 #pragma once
 #include "ConfigPanel.h"
-#include "src/Layers/Panels/Panels.h"
+#include "Panels.h"
 
 #include "../../CBTEngine/vendor/imgui/imgui.h"
 
@@ -9,8 +9,8 @@
 
 #include "AllocationMetrics.h"
 
-ConfigPanel::ConfigPanel(EditorLayer* instance)
-	: Panels("Configuration", instance), info()
+ConfigPanel::ConfigPanel()
+	: Panels("Configuration"), info()
 {
 
 }

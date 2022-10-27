@@ -1,7 +1,7 @@
 #pragma once
 
-#include "src/Layers/Panels/Panels.h"
-#include "src/Layers/EditorLayer.h"
+#include "Panels.h"
+#include "../EditorLayer.h"
 
 #include "List.h"
 #include "CBT/Application.h"
@@ -9,7 +9,7 @@
 class ConfigPanel : public Panels
 {
 public:
-	ConfigPanel(EditorLayer* instance);
+	ConfigPanel();
 	virtual ~ConfigPanel();
 
 	void Draw() override;
