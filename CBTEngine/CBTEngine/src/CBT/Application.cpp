@@ -6,6 +6,9 @@
 #include "Events/ApplicationEvent.h"
 
 #include "../../CBTEngine/vendor/GLAD/include/glad/glad.h"
+#include "../Render3D.h"
+#include "../Shader.h"
+
 
 namespace CBT {
 
@@ -24,6 +27,8 @@ namespace CBT {
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
+		m_Render3d = new Render3D();
+		m_Render3d->Init();
 	};
 
 	Application::~Application()
@@ -55,10 +60,11 @@ namespace CBT {
 
 		while (m_Running)
 		{
-			glClearColor(1, 0, 1, 1);
+			glClearColor(0.4, 0.4, 0.4, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+			m_Render3d->Drawtriangle();
 			m_ImGuiLayer->Begin();
 
 			{

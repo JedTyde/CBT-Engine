@@ -1,17 +1,20 @@
 #include "CBT.h"
 
 #include "Layers/EditorLayer.h"
+
 class ExampleLayer : public CBT::Layer
 {
+
 public:
-	ExampleLayer()
-		: Layer("Example")
+	ExampleLayer() : Layer("Example")
 	{
+		
 	}
 
 	void OnUpdate() override
 	{
 		CBT_INFO("ExampleLayer::Update");
+		
 	}
 
 	void OnEvent(CBT::Event& event)
@@ -20,7 +23,6 @@ public:
 	}
 
 };
-
 
 class Sandbox : public CBT::Application
 {

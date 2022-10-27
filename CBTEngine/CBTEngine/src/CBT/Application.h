@@ -7,6 +7,8 @@
 #include "Events/Event.h"
 #include <CBT/Events/ApplicationEvent.h>
 #include "ImGui/ImGuiLayer.h"
+#include "../Render3D.h"
+
 
 namespace CBT {
 
@@ -56,6 +58,8 @@ namespace CBT {
 		
 		LayerStack m_LayerStack;
 		ImGuiLayer* m_ImGuiLayer;
+
+		Render3D* m_Render3d;
 
 	private:
 		static Application* s_Instance;

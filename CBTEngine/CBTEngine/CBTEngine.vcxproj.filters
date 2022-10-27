@@ -73,6 +73,9 @@
       <Filter>Platforms\Windwos</Filter>
     </ClInclude>
     <ClInclude Include="src\WindowsInput.h" />
+    <ClInclude Include="Render3D.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
@@ -101,5 +104,8 @@
       <Filter>Platforms\Windwos</Filter>
     </ClCompile>
     <ClCompile Include="src\WindowsInput.cpp" />
+    <ClCompile Include="Render3D.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
 </Project>

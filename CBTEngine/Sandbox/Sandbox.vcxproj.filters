@@ -15,9 +15,6 @@
     <ClInclude Include="src\Layers\Panels\AboutPanel.h">
       <Filter>Layers\Panels</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\Panels\Panels.h">
-      <Filter>Layers\Panels</Filter>
-    </ClInclude>
     <ClInclude Include="src\Layers\Panels\AllocationMetrics.h">
       <Filter>Layers\Panels</Filter>
     </ClInclude>
@@ -25,6 +22,9 @@
       <Filter>Layers\Panels</Filter>
     </ClInclude>
     <ClInclude Include="src\Layers\Panels\List.h">
+      <Filter>Layers\Panels</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layers\Panels\Panels.h">
       <Filter>Layers\Panels</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,12 +35,12 @@
     <ClCompile Include="src\Layers\Panels\AboutPanel.cpp">
       <Filter>Layers\Panels</Filter>
     </ClCompile>
+    <ClCompile Include="src\Layers\Panels\ConfigPanel.cpp">
+      <Filter>Layers\Panels</Filter>
+    </ClCompile>
     <ClCompile Include="src\Layers\Panels\Panels.cpp">
       <Filter>Layers\Panels</Filter>
     </ClCompile>
     <ClCompile Include="src\SandboxApp.cpp" />
-    <ClCompile Include="src\Layers\Panels\ConfigPanel.cpp">
-      <Filter>Layers\Panels</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
