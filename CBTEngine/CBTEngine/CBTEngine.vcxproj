@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>CBTpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CBT_PLATFORM_WINDOWS;CBT_BUILD_DLL;CBT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\mathgeolib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\glm;vendor\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -90,6 +90,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>vendor\Assimp\lib\x64\debug\assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\CBTEngine\CBTEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -102,7 +103,7 @@
       <PrecompiledHeaderFile>CBTpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CBT_PLATFORM_WINDOWS;CBT_BUILD_DLL;CBT_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\mathgeolib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\glm;vendor\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -116,6 +117,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>vendor\Assimp\lib\x64\debug\assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\CBTEngine\CBTEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -128,7 +130,7 @@
       <PrecompiledHeaderFile>CBTpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CBT_PLATFORM_WINDOWS;CBT_BUILD_DLL;CBT_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\mathgeolib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\glm;vendor\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -142,6 +144,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>vendor\Assimp\lib\x64\debug\assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist-windows-x86_64\CBTEngine\CBTEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -149,8 +152,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Render3D.h" />
-    <ClInclude Include="Shader.h" />
     <ClInclude Include="src\CBT.h" />
     <ClInclude Include="src\CBT\Application.h" />
     <ClInclude Include="src\CBT\Core.h" />
@@ -165,17 +166,19 @@
     <ClInclude Include="src\CBT\Log.h" />
     <ClInclude Include="src\CBT\Window.h" />
     <ClInclude Include="src\CBTpch.h" />
+    <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\Input.h" />
+    <ClInclude Include="src\Model.h" />
     <ClInclude Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platforms\OpenGL\imgui_impl_glfw.h" />
     <ClInclude Include="src\Platforms\OpenGL\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h" />
+    <ClInclude Include="src\Render3D.h" />
+    <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\Triangle.h" />
     <ClInclude Include="src\WindowsInput.h" />
-    <ClInclude Include="Triangle.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Render3D.cpp" />
-    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="src\CBT\Application.cpp" />
     <ClCompile Include="src\CBT\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\CBT\Layer.cpp" />
@@ -184,11 +187,15 @@
     <ClCompile Include="src\CBTpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\Model.cpp" />
     <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platforms\OpenGL\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp" />
+    <ClCompile Include="src\Render3D.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Triangle.cpp" />
     <ClCompile Include="src\WindowsInput.cpp" />
-    <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

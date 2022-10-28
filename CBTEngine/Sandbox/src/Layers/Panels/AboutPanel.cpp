@@ -29,7 +29,7 @@ void AboutPanel::Draw()
 	ImGui::BulletText("SDL Mixer 2.0.0");
 	ImGui::BulletText("GLAD 2.0.0");
 	ImGui::BulletText("ImGui 1.5.1");
-	ImGui::BulletText("MathGeoLib 1.5");
+	ImGui::BulletText("GLM 0.9.9.8");
 	ImGui::BulletText("OpenGL 3.1");
 	ImGui::BulletText("Assimp 3.1.1");
 	ImGui::Separator();

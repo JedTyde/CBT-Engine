@@ -65,6 +65,7 @@ namespace CBT {
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 			m_Render3d->Drawtriangle();
+			m_Render3d->Drawmodel();
 			m_ImGuiLayer->Begin();
 
 			{

@@ -16,7 +16,8 @@ IncludeDir["GLFW"] = "CBTEngine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "CBTEngine/vendor/GLAD/include"
 IncludeDir["imgui"] = "CBTEngine/vendor/imgui/include"
 IncludeDir["rapidjson"] = "CBTEngine/vendor/rapidjson/include"
-IncludeDir["mathgeolib"] = "CBTEngine/vendor/mathgeolib/include"
+IncludeDir["glm"] = "CBTEngine/vendor/glm"
+IncludeDir["assimp"] = "CBTEngine/vendor/Assimp/include"
 
 include "CBTEngine/vendor/GLFW"
 include "CBTEngine/vendor/GLAD"
@@ -46,7 +47,8 @@ project "CBTEngine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.imgui}",
-		"%{IncludeDir.mathgeolib}"
+		"%{IncludeDir.glm}",
+        "%{IncludeDir.assimp}"
 	}
 		
 	links
@@ -54,6 +56,7 @@ project "CBTEngine"
 		"GLFW",
 		"GLAD",
 		"imgui",
+        "CBTEngine/vendor/Assimp/lib/x64/debug/assimp-vc143-mtd.lib"
 		--"opengl132.lib"
     }
 
