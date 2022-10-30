@@ -78,6 +78,7 @@
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Triangle.h" />
     <ClInclude Include="src\WindowsInput.h" />
+    <ClInclude Include="Textures.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
@@ -111,5 +112,7 @@
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Triangle.cpp" />
     <ClCompile Include="src\WindowsInput.cpp" />
+    <ClCompile Include="Textures.cpp" />
+    <ClCompile Include="ImageSTB.cpp" />
   </ItemGroup>
 </Project>

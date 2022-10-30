@@ -29,7 +29,6 @@ class Sandbox : public CBT::Application
 public:
 	Sandbox()
 	{
-		//SE TIENE QUE ARREGLAR ESTO
 		PushLayer(new EditorLayer());
 	}
 

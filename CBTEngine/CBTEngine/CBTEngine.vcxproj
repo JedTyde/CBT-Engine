@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>CBTpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CBT_PLATFORM_WINDOWS;CBT_BUILD_DLL;CBT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\glm;vendor\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\glm;vendor\Assimp\include;vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -177,8 +177,10 @@
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\Triangle.h" />
     <ClInclude Include="src\WindowsInput.h" />
+    <ClInclude Include="Textures.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ImageSTB.cpp" />
     <ClCompile Include="src\CBT\Application.cpp" />
     <ClCompile Include="src\CBT\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\CBT\Layer.cpp" />
@@ -196,6 +198,7 @@
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Triangle.cpp" />
     <ClCompile Include="src\WindowsInput.cpp" />
+    <ClCompile Include="Textures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
