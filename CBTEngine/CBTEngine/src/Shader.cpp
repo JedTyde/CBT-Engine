@@ -55,18 +55,23 @@ void Shader::InitCam()
 {
 	const char* vertexShaderSource = "#version 330 core\n"
 		"layout (location = 0) in vec3 aPos;\n"
+		"layout (location = 1) in vec2 aTex;\n"
+		"out vec2 texCoord;\n"
 		"uniform mat4 model;\n"
 		"uniform mat4 view;\n"
 		"uniform mat4 proj;\n"
 		"void main()\n"
 		"{\n"
 		"   gl_Position = proj * view * model * vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+			"texCoord = aTex;\n"
 		"}\0";
 	const char* fragmentShaderSource = "#version 330 core\n"
 		"out vec4 FragColor;\n"
+		"in vec2 texCoord;\n"
+		"uniform sampler2D tex0;\n"
 		"void main()\n"
 		"{\n"
-		"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+		"   FragColor = texture(tex0, texCoord);\n"
 		"}\n\0";
 
 	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);

@@ -5,17 +5,17 @@
 #include "stb_image.h"
 #include <glad/glad.h>
 
-Textures::Textures(GLenum TextureTarget, const std::string& FileName)
+Textures::Textures()
 {
-	m_textureTarget = TextureTarget;
-	m_fileName = FileName;
 }
 
-bool Textures::Load()
+bool Textures::Load(const std::string& FileName)
 {
+	m_fileName = FileName;
+
 	stbi_set_flip_vertically_on_load(1);
 	int width = 0, height = 0, bpp = 0;
-	unsigned char* image_data = stbi_load(m_fileName.c_str(), &width, &height, &bpp, 0);
+	unsigned char* image_data = stbi_load(m_fileName.c_str(), &width, &height, &bpp, STBI_rgb_alpha);
 
 	if (!image_data)
 	{
@@ -23,27 +23,25 @@ bool Textures::Load()
 	}
 	
 	glGenTextures(1, &m_textureObj);
-	glBindTexture(m_textureTarget, m_textureObj);
-	if (m_textureTarget == GL_TEXTURE_2D)
-	{
-		glTexImage2D(m_textureTarget, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image_data);
-	}
-	else {
-		printf("Support for texture target %x is not implemented", m_textureTarget);
-	}
+	glBindTexture(GL_TEXTURE_2D, m_textureObj);
 
-	glTexParameterf(m_textureTarget, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameterf(m_textureTarget, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	//glTexParameterf(m_textureTarget, GL_TEXTURE_WRAP_S, GL_CLAMP);
-	//glTexParameterf(m_textureTarget, GL_TEXTURE_WRAP_T, GL_CLAMP);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
 
-	glBindTexture(m_textureTarget, 0);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	stbi_image_free(image_data);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
 
 	return true;
 }
 
-void Textures::Bind(GLenum TextureUnit)
+void Textures::Bind(unsigned int TextureUnit)
 {
 	glActiveTexture(TextureUnit);
-	glBindTexture(m_textureTarget, m_textureObj);
+	glBindTexture(GL_TEXTURE_2D, m_textureObj);
 }

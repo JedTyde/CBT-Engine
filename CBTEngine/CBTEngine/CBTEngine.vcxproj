@@ -175,12 +175,11 @@
     <ClInclude Include="src\Platforms\Windwos\WindowsWindow.h" />
     <ClInclude Include="src\Render3D.h" />
     <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\Textures.h" />
     <ClInclude Include="src\Triangle.h" />
     <ClInclude Include="src\WindowsInput.h" />
-    <ClInclude Include="Textures.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ImageSTB.cpp" />
     <ClCompile Include="src\CBT\Application.cpp" />
     <ClCompile Include="src\CBT\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\CBT\Layer.cpp" />
@@ -190,15 +189,16 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\ImageSTB.cpp" />
     <ClCompile Include="src\Model.cpp" />
     <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platforms\OpenGL\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platforms\Windwos\WindowsWindow.cpp" />
     <ClCompile Include="src\Render3D.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Textures.cpp" />
     <ClCompile Include="src\Triangle.cpp" />
     <ClCompile Include="src\WindowsInput.cpp" />
-    <ClCompile Include="Textures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

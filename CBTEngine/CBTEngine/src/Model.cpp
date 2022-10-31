@@ -67,8 +67,10 @@ void Model::GenerateBuffers()
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes.size() * sizeof(int), indexes.data(), GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*) (3 * sizeof(float)));
+	glEnableVertexAttribArray(1);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
@@ -85,6 +87,16 @@ Model* Model::LoadModel(aiMesh* mesh)
 		model->vertices.push_back(mesh->mVertices[j].x);
 		model->vertices.push_back(mesh->mVertices[j].y);
 		model->vertices.push_back(mesh->mVertices[j].z);
+
+		if (mesh->mTextureCoords[0])
+		{
+			model->vertices.push_back(mesh->mTextureCoords[0][j].x);
+			model->vertices.push_back(mesh->mTextureCoords[0][j].y);
+		}
+		else {
+			model->vertices.push_back(0.0f);
+			model->vertices.push_back(0.0f);
+		}
 	}
 	for (int k = 0; k < mesh->mNumFaces; ++k)
 	{

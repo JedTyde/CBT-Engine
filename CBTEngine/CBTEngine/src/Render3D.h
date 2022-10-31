@@ -7,6 +7,7 @@
 #include "Triangle.h"
 #include "Model.h"
 #include "Camera.h"
+#include "Textures.h"
 
 
 namespace CBT {
@@ -27,5 +28,6 @@ namespace CBT {
 		Shader shader;
 		Shader shaderCam;
 		Camera cam;
+		Textures texture;
 	};
 }
