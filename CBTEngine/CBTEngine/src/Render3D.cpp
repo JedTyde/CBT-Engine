@@ -30,7 +30,7 @@ void CBT::Render3D::Drawtriangle()
 
 void CBT::Render3D::Drawmodel()
 {
-	//glEnable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
 	shaderCam.Use();
 	shaderCam.SetModel(glm::mat4(1.0f));
 	shaderCam.SetView(cam.getView());
