@@ -81,13 +81,13 @@ namespace CBT {
 		updateView();
 	}
 
-	void Camera::lookat(const  glm::vec3 position)
+	void Camera::lookAt(const  glm::vec3 position)
 	{
 		m_View = glm::lookAt(m_CameraPos, position, m_CameraUp);
 		m_CameraFront = position - m_CameraPos;
 	}
 
-	void Camera::lookat(const glm::vec3 cameraPos, const glm::vec3 position, const glm::vec3 camUp)
+	void Camera::lookAt(const glm::vec3 cameraPos, const glm::vec3 position, const glm::vec3 camUp)
 	{
 		m_CameraPos = cameraPos;
 		m_CameraUp = camUp;

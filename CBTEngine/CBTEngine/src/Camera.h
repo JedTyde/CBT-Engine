@@ -51,8 +51,8 @@ namespace CBT {
 		glm::vec3 getFront() { return m_CameraFront; }
 		glm::vec3 getUp() { return m_CameraUp; }
 
-		void lookat(const glm::vec3 position);
-		void lookat(const glm::vec3 cameraPos, const glm::vec3 position, const glm::vec3 camUp);
+		void lookAt(const glm::vec3 position);
+		void lookAt(const glm::vec3 cameraPos, const glm::vec3 position, const glm::vec3 camUp);
 
 		void SetPerspective(const float fov, const float aspectRatio, const float nearPlaneDistance = 0.1f, const float farPlaneDistance = 100.0f);
 		void SetOrthographic(const int width, const int height, const float nearPlaneDistance = 0.1f, const float farPlaneDistance = 100.0f);

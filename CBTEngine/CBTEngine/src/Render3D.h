@@ -20,8 +20,8 @@ namespace CBT {
 		bool Init();
 		void Update();
 		void Close();
-		void Drawtriangle();
-		void Drawmodel();
+		void DrawTriangle();
+		void DrawModel();
 	private:
 		Triangle triangle;
 		Model model;
@@ -29,5 +29,8 @@ namespace CBT {
 		Shader shaderCam;
 		Camera cam;
 		Textures texture;
+
+		int cameraSpeed = 1;
+		glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 	};
 }

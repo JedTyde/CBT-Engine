@@ -64,8 +64,8 @@ namespace CBT {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
-			m_Render3d->Drawtriangle();
-			m_Render3d->Drawmodel();
+			m_Render3d->DrawTriangle();
+			m_Render3d->DrawModel();
 			m_ImGuiLayer->Begin();
 
 			{
@@ -77,6 +77,7 @@ namespace CBT {
 
 			m_ImGuiLayer->End();
 			m_Window->OnUpdate();
+			m_Render3d->Update();
 		}
 	}
 
