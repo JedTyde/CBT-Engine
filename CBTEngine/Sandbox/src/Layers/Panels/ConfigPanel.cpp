@@ -58,7 +58,7 @@ void ConfigPanel::Draw()
 	{
 		ImGui::Text("GLFW version:");
 		ImGui::SameLine();
-		ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "%s", info.glfwVer);
+		ImGui::TextColored(ImVec4(1.0f, 1.0f, 0.0f, 1.0f), "3.4");
 		ImGui::Separator();
 		ImGui::Text("CPUs:");
 		ImGui::SameLine();

@@ -31,8 +31,6 @@ namespace CBT {
 		inline void* GetNativeWindow() const override { return m_Window; }
 
 
-
-
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
@@ -55,9 +53,5 @@ namespace CBT {
 
 		WindowData m_Data;
 		WindowData m_OldData;
-
-
-
-
 	};
 }

@@ -9,6 +9,9 @@
 #include "../Render3D.h"
 #include "../Shader.h"
 
+#define GL_GPU_MEM_INFO_TOTAL_AVAILABLE_MEM_NVX 0x9048
+#define GL_GPU_MEM_INFO_CURRENT_AVAILABLE_MEM_NVX 0x9049
+#define GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX 0x904B
 
 namespace CBT {
 
@@ -27,8 +30,12 @@ namespace CBT {
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 
+		int min, major, rev;
+		SetHardwareInfo();
+
 		m_Render3d = new Render3D();
 		m_Render3d->Init();
+
 	};
 
 	Application::~Application()
@@ -45,6 +52,32 @@ namespace CBT {
 	{
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
+	}
+
+	void Application::SetHardwareInfo()
+	{
+		SYSTEM_INFO info;
+		::GetSystemInfo(&info);
+
+		MEMORYSTATUSEX memInfo;
+		memInfo.dwLength = sizeof(MEMORYSTATUSEX);
+		GlobalMemoryStatusEx(&memInfo);
+
+		GLint total_mem_kb = 0;
+		glGetIntegerv(GL_GPU_MEM_INFO_TOTAL_AVAILABLE_MEM_NVX, &total_mem_kb);
+		GLint cur_avail_mem_kb = 0;
+		glGetIntegerv(GL_GPU_MEM_INFO_CURRENT_AVAILABLE_MEM_NVX, &cur_avail_mem_kb);
+		GLint cur_reserv_mem_kb = 0;
+		glGetIntegerv(GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX, &cur_reserv_mem_kb);
+
+		m_SysInfo.numCores = info.dwNumberOfProcessors;
+		m_SysInfo.ram = (float)(memInfo.ullTotalPhys >> 20);
+		m_SysInfo.gpu = (const unsigned char*)glGetString(GL_VENDOR);
+		m_SysInfo.gpuBrand = glGetString(GL_RENDERER);
+		m_SysInfo.gpuVRAM = (float)(total_mem_kb >> 10);
+		m_SysInfo.gpuVRAMAV = (float)(cur_avail_mem_kb >> 10);
+		m_SysInfo.gpuVRAMUsage = (float)((total_mem_kb - cur_avail_mem_kb) >> 10);
+		m_SysInfo.gpuVRAMReserve = (float)(cur_reserv_mem_kb >> 10);
 	}
 
 	void Application::OnEvent(Event& e)
@@ -67,6 +100,7 @@ namespace CBT {
 			m_Render3d->DrawTriangle();
 			m_Render3d->DrawModel();
 			m_ImGuiLayer->Begin();
+
 
 			{
 				m_ImGuiLayer->OnUpdate();
