@@ -48,6 +48,8 @@ namespace CBT {
 
 		inline SysInfo& GetSystemInfo() { return m_SysInfo; }
 
+		void GetUrl(const char* url);
+		void Quit();
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 

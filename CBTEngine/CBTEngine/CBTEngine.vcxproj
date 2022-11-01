@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>CBTpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CBT_PLATFORM_WINDOWS;CBT_BUILD_DLL;CBT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\glm;vendor\Assimp\include;vendor\stb-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\imgui\include;vendor\glm;vendor\Assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -161,6 +161,7 @@
     <ClInclude Include="src\CBT\Events\KeyEvent.h" />
     <ClInclude Include="src\CBT\Events\MouseEvent.h" />
     <ClInclude Include="src\CBT\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\CBT\ImGui\ImGuiLog.h" />
     <ClInclude Include="src\CBT\Layer.h" />
     <ClInclude Include="src\CBT\LayerStack.h" />
     <ClInclude Include="src\CBT\Log.h" />

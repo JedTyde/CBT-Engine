@@ -46,6 +46,9 @@
     <ClInclude Include="src\CBT\ImGui\ImGuiLayer.h">
       <Filter>CBT\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\CBT\ImGui\ImGuiLog.h">
+      <Filter>CBT\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\CBT\Layer.h">
       <Filter>CBT</Filter>
     </ClInclude>
@@ -76,9 +79,9 @@
     </ClInclude>
     <ClInclude Include="src\Render3D.h" />
     <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\Textures.h" />
     <ClInclude Include="src\Triangle.h" />
     <ClInclude Include="src\WindowsInput.h" />
-    <ClInclude Include="src\Textures.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBT\Application.cpp">
@@ -98,6 +101,7 @@
     </ClCompile>
     <ClCompile Include="src\CBTpch.cpp" />
     <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\ImageSTB.cpp" />
     <ClCompile Include="src\Model.cpp" />
     <ClCompile Include="src\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platforms\OpenGL</Filter>
@@ -110,9 +114,8 @@
     </ClCompile>
     <ClCompile Include="src\Render3D.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Textures.cpp" />
     <ClCompile Include="src\Triangle.cpp" />
     <ClCompile Include="src\WindowsInput.cpp" />
-    <ClCompile Include="src\ImageSTB.cpp" />
-    <ClCompile Include="src\Textures.cpp" />
   </ItemGroup>
 </Project>

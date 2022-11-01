@@ -15,13 +15,17 @@ AboutPanel::~AboutPanel()
 
 void AboutPanel::Draw()
 {
+    CBT::SysInfo& info = CBT::Application::Get().GetSystemInfo();
+
 	ImGui::Begin(name, &active);
 	ImGui::BulletText("CBT Engine");
 	ImGui::Separator();
 
 	ImGui::Text("CREATED BY:");
-	ImGui::BulletText("Pau Garcia and Jose Antonio Atencia");
-	ImGui::BulletText("https://github.com/PaGaQi and https://github.com/JedTyde on GitHub");
+    if(ImGui::Button("Pau Garcia"))
+        CBT::Application::Get().GetUrl("https://github.com/PaGaQi"); 
+    if(ImGui::Button("Jose Antonio Atencia"))
+        CBT::Application::Get().GetUrl("https://github.com/JedTyde");
 	ImGui::Separator();
 
 	ImGui::Text("LIBRARIES USED:");

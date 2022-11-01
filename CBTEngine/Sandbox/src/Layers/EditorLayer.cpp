@@ -19,10 +19,7 @@ EditorLayer::~EditorLayer()
 
 void EditorLayer::OnAttach()
 {
-	m_About = std::make_shared<AboutPanel>();
-
-
-
+	m_About = std::make_unique<AboutPanel>();
 	m_Configuration = std::make_unique<ConfigPanel>();
 
 	m_Panels.push_back(m_Configuration.get());
@@ -66,7 +63,46 @@ void EditorLayer::OnEvent(CBT::Event& ev)
 
 void EditorLayer::MainMenuBar()
 {
+	if (ImGui::BeginMainMenuBar())
+	{
+		if (ImGui::BeginMenu("General"))
+		{
+			if (ImGui::MenuItem("Close"))
+				CBT::Application::Get().Quit();
+			ImGui::EndMenu();
+		}
+		if (ImGui::BeginMenu("View"))
+		{
+			int i = 1;
+			for (auto& p : m_Panels)
+			{
+				if (ImGui::MenuItem(p->GetName(), "", p->active))
+					p->SwitchActive();
+			}
 
+			ImGui::EndMenu();
+		}
+
+		if (ImGui::BeginMenu("Help"))
+		{
+			if (ImGui::MenuItem("GuiDemo", "", m_ShowDemo))
+			{
+				m_ShowDemo != m_ShowDemo;
+			}
+
+			if (ImGui::MenuItem("Download Latest"))
+				CBT::Application::Get().GetUrl("https://github.com/JedTyde/CBT-Engine/releases"); 
+
+			if (ImGui::MenuItem("Got an issue?"))
+				CBT::Application::Get().GetUrl("https://github.com/JedTyde/CBT-Engine/issues");
+
+			if (ImGui::MenuItem("About", "", m_About->active))
+				m_About->SwitchActive();
+			ImGui::End();
+		}
+		
+		ImGui::EndMainMenuBar();
+	}
 
 }
 
