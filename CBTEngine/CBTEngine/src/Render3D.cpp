@@ -44,31 +44,44 @@ void CBT::Render3D::DrawModel()
 
 void CBT::Render3D::Update()
 {
-	glm::vec3 newPos = cam.getPosition();
-	
-	//GOING RIGHT	
-	if (CBT::Input::IsKeyPressed(GLFW_KEY_D))
-		newPos.x++;
-	
-	//GOING LEFT
-	if (CBT::Input::IsKeyPressed(GLFW_KEY_A))
-		newPos.x--;
-	
-	//GOING FRONT
-	if (CBT::Input::IsKeyPressed(GLFW_KEY_W))
-		newPos.z--;
-	
-	//GOING BACK
-	if (CBT::Input::IsKeyPressed(GLFW_KEY_S))
-		newPos.z++;
-	
-	//GOING UP
-	if (CBT::Input::IsKeyPressed(GLFW_KEY_SPACE))
-		newPos.y++;
+	if (CBT::Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_2))
+	{
+		glm::vec3 newPos = cam.getPosition();
 
-	//GOING DOWN
-	if (CBT::Input::IsKeyPressed(GLFW_KEY_LEFT_CONTROL))
-		newPos.y--;
+		//GOING RIGHT	
+		if (CBT::Input::IsKeyPressed(GLFW_KEY_D))
+		{
+			newPos += glm::normalize(glm::cross(cam.getFront(), cam.getUp())) * 0.5f ;
+		}
 
-	cam.setPosition(newPos);
+		//GOING LEFT
+		if (CBT::Input::IsKeyPressed(GLFW_KEY_A))
+			newPos -= glm::normalize(glm::cross(cam.getFront(), cam.getUp())) * 0.5f;
+
+		//GOING FRONT
+		if (CBT::Input::IsKeyPressed(GLFW_KEY_W))
+			newPos += cam.getFront() * 0.1f;
+
+		//GOING BACK
+		if (CBT::Input::IsKeyPressed(GLFW_KEY_S))
+			newPos -= cam.getFront() * 0.1f;
+
+		//GOING UP
+		if (CBT::Input::IsKeyPressed(GLFW_KEY_SPACE))
+			newPos += cam.getUp();
+
+		//GOING DOWN
+		if (CBT::Input::IsKeyPressed(GLFW_KEY_LEFT_CONTROL))
+			newPos -= cam.getUp();
+
+		cam.setPosition(newPos);
+	}
+
+	if (CBT::Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_1))
+	{
+		glm::vec3 newDirection = { 0, 0, 0 };
+
+		cam.lookAt(newDirection);
+	}
+
 }
