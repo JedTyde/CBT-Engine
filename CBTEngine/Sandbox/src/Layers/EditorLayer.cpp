@@ -6,6 +6,7 @@
 #include "CBT/Application.h"
 #include "CBT/Events/Event.h"
 #include "Panels/ConfigPanel.h"
+#include "Panels/HierarchyPanel.h"
 
 EditorLayer::EditorLayer() : Layer("Editor Layer")
 {
@@ -21,8 +22,10 @@ void EditorLayer::OnAttach()
 {
 	m_About = std::make_unique<AboutPanel>();
 	m_Configuration = std::make_unique<ConfigPanel>();
+	m_Hierarchy= std::make_unique<HierarchyPanel>();
 
 	m_Panels.push_back(m_Configuration.get());
+	m_Panels.push_back(m_Hierarchy.get());
 
 }
 

@@ -147,6 +147,8 @@
     <ClInclude Include="src\Layers\Panels\AboutPanel.h" />
     <ClInclude Include="src\Layers\Panels\AllocationMetrics.h" />
     <ClInclude Include="src\Layers\Panels\ConfigPanel.h" />
+    <ClInclude Include="src\Layers\Panels\HierarchyPanel.h" />
+    <ClInclude Include="src\Layers\Panels\InspectorPanel.h" />
     <ClInclude Include="src\Layers\Panels\List.h" />
     <ClInclude Include="src\Layers\Panels\Panels.h" />
   </ItemGroup>
@@ -154,6 +156,8 @@
     <ClCompile Include="src\Layers\EditorLayer.cpp" />
     <ClCompile Include="src\Layers\Panels\AboutPanel.cpp" />
     <ClCompile Include="src\Layers\Panels\ConfigPanel.cpp" />
+    <ClCompile Include="src\Layers\Panels\HierarchyPanel.cpp" />
+    <ClCompile Include="src\Layers\Panels\InspectorPanel.cpp" />
     <ClCompile Include="src\Layers\Panels\Panels.cpp" />
     <ClCompile Include="src\SandboxApp.cpp" />
   </ItemGroup>
