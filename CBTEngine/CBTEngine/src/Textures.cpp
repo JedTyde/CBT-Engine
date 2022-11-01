@@ -2,7 +2,8 @@
 #include "Textures.h"
 #include "Render3D.h"
 
-#include "stb_image.h"
+//#include "stb_image.h"
+#include "../vendor/stb-master/stb_image.h"
 #include <glad/glad.h>
 
 Textures::Textures()

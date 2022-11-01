@@ -84,7 +84,7 @@ namespace CBT
 
 		float time = (float)glfwGetTime();
 		io.DeltaTime = m_Time > 0.0f ? (time - m_Time) : (1.0f / 60.0f);
-		m_Time = time;		
+		m_Time = time;
 	}
 
 	void ImGuiLayer::OnEvent(Event& event)
