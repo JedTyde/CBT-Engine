@@ -52,16 +52,16 @@ namespace CBT
 		io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;*/
 		io.BackendFlags |= ImGuiBackendFlags_PlatformHasViewports;
 		io.BackendFlags |= ImGuiBackendFlags_RendererHasViewports;
-		/*io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;*/
+		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
 		//// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
-		//ImGuiStyle& style = ImGui::GetStyle();
-		//if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-		//{
-		//	style.WindowRounding = 0.0f;
-		//	style.Colors[ImGuiCol_WindowBg].w = 1.0f;
-		//}
+		ImGuiStyle& style = ImGui::GetStyle();
+		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+		{
+			style.WindowRounding = 0.0f;
+			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+		}
 
 		auto window = static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow());
 
@@ -166,10 +166,10 @@ namespace CBT
 	bool ImGuiLayer::OnWindowResizeEvent(WindowResizeEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
-		io.DisplaySize = ImVec2(e.GetWidth(), e.GetHeight());
+		io.DisplaySize = ImVec2((float)e.GetWidth(), (float)e.GetHeight());
 		io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
 		glViewport(0, 0, e.GetWidth(), e.GetHeight());
-		
+
 		return false;
 	}
 

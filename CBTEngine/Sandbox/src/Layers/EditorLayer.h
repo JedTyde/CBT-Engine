@@ -5,6 +5,7 @@
 #include "Panels/Panels.h"
 #include "Panels/AboutPanel.h"
 #include "Panels/HierarchyPanel.h"
+#include "Panels/InspectorPanel.h"
 #include "CBT/Events/KeyEvent.h"
 #include "CBT/Events/Event.h"
 
@@ -30,6 +31,7 @@ private:
 	std::unique_ptr<Panels>	m_Configuration;
 	std::unique_ptr<Panels>	m_Assets;
 	std::unique_ptr<Panels> m_Hierarchy;
+	std::unique_ptr<Panels> m_Inspector;
 
 	bool m_ShowConsole = false;
 	bool m_ShowDemo = false;

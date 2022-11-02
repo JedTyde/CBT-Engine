@@ -7,6 +7,7 @@
 #include "CBT/Events/Event.h"
 #include "Panels/ConfigPanel.h"
 #include "Panels/HierarchyPanel.h"
+#include "Panels/InspectorPanel.h"
 
 EditorLayer::EditorLayer() : Layer("Editor Layer")
 {
@@ -23,9 +24,11 @@ void EditorLayer::OnAttach()
 	m_About = std::make_unique<AboutPanel>();
 	m_Configuration = std::make_unique<ConfigPanel>();
 	m_Hierarchy= std::make_unique<HierarchyPanel>();
+	m_Inspector= std::make_unique<InspectorPanel>();
 
 	m_Panels.push_back(m_Configuration.get());
 	m_Panels.push_back(m_Hierarchy.get());
+	m_Panels.push_back(m_Inspector.get());
 
 }
 
@@ -111,7 +114,32 @@ void EditorLayer::MainMenuBar()
 
 void EditorLayer::DockSpace()
 {
+	static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None | ImGuiDockNodeFlags_PassthruCentralNode;
+	ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoBackground;
 
+	const ImGuiViewport* viewport = ImGui::GetMainViewport();
+	ImGui::SetNextWindowPos(viewport->WorkPos);
+	ImGui::SetNextWindowSize(viewport->WorkSize);
+	ImGui::SetNextWindowViewport(viewport->ID);
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+	window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+	window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+	static bool show = false;
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+	ImGui::Begin("DockSpace Demo", &show, window_flags);
+
+	ImGui::PopStyleVar();
+	ImGui::PopStyleVar(2);
+	// Submit the DockSpace
+	ImGuiIO& io = ImGui::GetIO();
+	if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
+	{
+		ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
+		ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
+	}
+
+	ImGui::End();
 }
 
 bool EditorLayer::OnKeyPressed(CBT::KeyPressedEvent& k)

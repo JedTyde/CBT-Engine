@@ -29,6 +29,7 @@ void Model::Load(const char* path)
 			models.push_back(LoadModel(scene->mMeshes[i]));
 		}
 		aiReleaseImport(scene);
+		CBT_CORE_INFO(path);
 	}
 	else
 		CBT_CORE_ERROR("ERORE LOADING MEHS {0}", path);
