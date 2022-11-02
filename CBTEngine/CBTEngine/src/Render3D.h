@@ -32,5 +32,13 @@ namespace CBT {
 
 		int cameraSpeed = 1;
 		glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+
+		float  yaw;
+		float pitch;
+
+		float prevX;
+		float prevY;
+
+		bool firstTime = 0;
 	};
 }

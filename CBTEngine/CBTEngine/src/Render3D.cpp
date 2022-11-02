@@ -22,6 +22,14 @@ bool CBT::Render3D::Init()
 	cam.lookAt(glm::vec3(0.0f));
 	texture.Load("Assets/bakeHouse.png");
 
+	yaw = -90.0f;
+	pitch = 0.0f;
+
+	prevX = CBT::Input::GetMouseX();
+	prevY = CBT::Input::GetMouseY();
+
+	firstTime = 0;
+
 	return true;
 }
 
@@ -75,13 +83,44 @@ void CBT::Render3D::Update()
 			newPos -= cam.getUp();
 
 		cam.setPosition(newPos);
-	}
+	}	
 
 	if (CBT::Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_1))
+	{
+		//CAMERA ROTATIONS
+		float mouseX = CBT::Input::GetMouseX();
+		float mouseY = CBT::Input::GetMouseY();
+
+		float offsetX = prevX - mouseX;
+		float offsetY = mouseY - prevY;
+
+		if (offsetX != 0) offsetX = offsetX / abs(offsetX);
+		if (offsetY != 0) offsetY = offsetY / abs(offsetY);
+
+		yaw += offsetX;
+		pitch += offsetY;
+
+		if (pitch > 89.0f) pitch = 89.0f;
+		if (pitch < -89.0f) pitch = -89.0f;
+
+		glm::vec3 direction;
+		direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+		direction.y = sin(glm::radians(pitch));
+		direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));	
+
+		glm::vec3 front = glm::normalize(direction);
+		cam.setFront({ front.x, front.y, front.z });
+		printf("X%f Y%f Z%f \n", offsetX, offsetY, direction.z);
+
+
+		prevX = mouseX;
+		prevY = mouseY;
+	}
+
+	if (CBT::Input::IsKeyPressed(GLFW_KEY_F))
 	{
 		glm::vec3 newDirection = { 0, 0, 0 };
 
 		cam.lookAt(newDirection);
 	}
-
 }
