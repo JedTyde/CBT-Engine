@@ -73,6 +73,8 @@ void EditorLayer::MainMenuBar()
 	{
 		if (ImGui::BeginMenu("General"))
 		{
+			ImGui::MenuItem("Load");
+				
 			if (ImGui::MenuItem("Close"))
 				CBT::Application::Get().Quit();
 			ImGui::EndMenu();

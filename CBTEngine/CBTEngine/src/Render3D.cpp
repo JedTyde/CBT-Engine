@@ -29,6 +29,7 @@ bool CBT::Render3D::Init()
 	prevY = CBT::Input::GetMouseY();
 
 	firstTime = 0;
+	CBT_CORE_INFO("Renderer3D ready");
 
 	return true;
 }
@@ -83,16 +84,13 @@ void CBT::Render3D::Update()
 			newPos -= cam.getUp();
 
 		cam.setPosition(newPos);
-	}	
 
-	if (CBT::Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_1))
-	{
 		//CAMERA ROTATIONS
 		float mouseX = CBT::Input::GetMouseX();
 		float mouseY = CBT::Input::GetMouseY();
 
-		float offsetX = prevX - mouseX;
-		float offsetY = mouseY - prevY;
+		float offsetX = mouseX - prevX;
+		float offsetY = prevY - mouseY;
 
 		if (offsetX != 0) offsetX = offsetX / abs(offsetX);
 		if (offsetY != 0) offsetY = offsetY / abs(offsetY);
@@ -106,7 +104,7 @@ void CBT::Render3D::Update()
 		glm::vec3 direction;
 		direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
 		direction.y = sin(glm::radians(pitch));
-		direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));	
+		direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
 
 		glm::vec3 front = glm::normalize(direction);
 		cam.setFront({ front.x, front.y, front.z });
@@ -115,7 +113,7 @@ void CBT::Render3D::Update()
 
 		prevX = mouseX;
 		prevY = mouseY;
-	}
+	}	
 
 	if (CBT::Input::IsKeyPressed(GLFW_KEY_F))
 	{

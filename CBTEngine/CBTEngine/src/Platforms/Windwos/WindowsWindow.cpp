@@ -62,6 +62,12 @@ namespace CBT {
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
+		//CBT_CORE_INFO("Using Glad {0}", glad_glGetString(GLAD_GL_VERSION_1_0));
+		CBT_CORE_INFO("Vendor: {0}", glGetString(GL_VENDOR));
+		CBT_CORE_INFO("Renderer: {0}", glGetString(GL_RENDERER));
+		CBT_CORE_INFO("OpenGL version supported {0}", glGetString(GL_VERSION));
+		CBT_CORE_INFO("GLSL: {0}\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
+
 		// Set GLFW callbacks
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 			{
